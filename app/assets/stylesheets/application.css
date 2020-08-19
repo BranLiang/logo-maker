@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.font-selector > div {
+  text-align: center;
+  padding: 5px;
+  background-color: #38a169;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.font-selector > div:hover {
+  background-color: #2f855a;
+}

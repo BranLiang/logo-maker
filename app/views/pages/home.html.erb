@@ -1,3 +1,14 @@
-<div class="w-full h-screen flex items-center justify-center">
-  <div contenteditable="true" class="text-6xl">MyLogo</div>
+<div class="flex justify-between" data-controller="font">
+  <div class="w-full h-screen flex flex-col items-center justify-center">
+    <div contenteditable="true"
+      class="text-8xl"
+      style="font-family:Ma Shan Zheng;"
+      data-target="font.text"
+    >MyLogo</div>
+  </div>
+  <div class="font-selector w-64 bg-gray-300">
+    <div style="font-family:Droid Sans;" data-target="font.google" data-action="click->font#switch">Droid Sans</div>
+    <div style="font-family:Droid Serif;" data-target="font.google" data-action="click->font#switch">Droid Serif</div>
+    <div style="font-family:Ma Shan Zheng;" data-target="font.google" data-action="click->font#switch">马善政</div>
+  </div>
 </div>
