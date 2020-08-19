@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+// You can add your own custom components/styles here
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+@import "tailwindcss/utilities";
