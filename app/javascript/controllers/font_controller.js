@@ -1,30 +1,26 @@
 import { Controller } from "stimulus"
+import googleFonts from "../utils/google_fonts_sample"
 import WebFont from "webfontloader"
-import { htmlToPNG } from "../utils/htmlToImage"
 
 export default class extends Controller {
-  static targets = ["google", "text"]
-
   connect() {
+    googleFonts.forEach(f => {
+      const element = document.createElement('div')
+      element.style.fontFamily = f.family
+      element.textContent = f.display_name || f.family
+      element.addEventListener('click', () => {
+        document.dispatchEvent(new CustomEvent('font-switch', {
+          detail: {
+            family: f.family
+          }
+        }))
+      })
+      this.element.append(element)
+    })
     WebFont.load({
       google: {
-        families: this.googleTargets.map(t => {
-          return t.style.fontFamily.replace(/['"]+/g, '')
-        })
+        families: googleFonts.map(f => f.family)
       }
     });
-  }
-
-  switch(e) {
-    const font = e.target.style.fontFamily.replace(/['"]+/g, '')
-    this.textTarget.style.fontFamily = font
-  }
-
-  downloadPNG() {
-    console.log("Download PNG")
-    const element = document.getElementById("logo")
-    htmlToPNG(element, {
-      height: element.offsetHeight
-    })
   }
 }

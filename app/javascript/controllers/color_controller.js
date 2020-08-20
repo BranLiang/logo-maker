@@ -1,6 +1,4 @@
-import {
-  Controller
-} from "stimulus"
+import { Controller } from "stimulus"
 import Pickr from '@simonwep/pickr'
 
 export default class extends Controller {
