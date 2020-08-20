@@ -11,6 +11,13 @@ export const htmlToPNG = (element, { height } = defaultOptions) => {
   canvas.height = height
   canvas.width = width
 
+  // Fill background
+  const bg = element.style.backgroundColor
+  if (bg) {
+    ctx.fillStyle = bg
+    ctx.fillRect(0, 0, width, height)
+  }
+
   // Text styles
   ctx.font = `${parseInt(height * 0.6)}px ${element.style.fontFamily.replace(/['"]+/g, '')}`
   ctx.textAlign = "center"
