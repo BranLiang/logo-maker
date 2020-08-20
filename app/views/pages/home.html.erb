@@ -8,11 +8,11 @@
     <div data-controller="color"></div>
     <canvas id="test-canvas">
   </div>
-  <div class="w-64 border-l border-gray-400">
+  <div class="w-64 border-l border-gray-400" data-controller="font">
     <div class="px-4 py-2 flex items-center">
       <i data-feather="search" class="inline w-4 h-4 text-green-800" data-controller="feather"></i>
-      <input type="text" placeholder="Search" class="ml-2">
+      <input type="text" placeholder="Search" data-action="input->font#search" class="ml-2">
     </div>
-    <div class="font-selector" data-controller="font"></div>
+    <div class="font-selector" data-target="font.list"></div>
   </div>
 </div>
