@@ -23,6 +23,8 @@ export default class extends Controller {
   downloadPNG() {
     console.log("Download PNG")
     const element = document.getElementById("logo")
-    htmlToPNG(element)
+    htmlToPNG(element, {
+      height: element.offsetHeight
+    })
   }
 }
