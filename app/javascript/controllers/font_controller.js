@@ -1,6 +1,7 @@
 import { Controller } from "stimulus"
 import googleFonts from "../utils/google_fonts_sample"
 import WebFont from "webfontloader"
+import SearchEngine from "../utils/search_engine"
 
 export default class extends Controller {
   connect() {

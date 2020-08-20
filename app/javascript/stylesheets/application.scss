@@ -3,7 +3,7 @@
 @import '@simonwep/pickr/dist/themes/classic.min.css';
 
 // You can add your own custom components/styles here
-[contenteditable] {
+[contenteditable], input {
   outline: 0px solid transparent;
 }
 

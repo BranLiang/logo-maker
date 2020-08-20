@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-import { htmlToPNG } from "../utils/htmlToImage"
+import { htmlToPNG } from "../utils/html_to_image"
 
 export default class extends Controller {
   connect() {
