@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "@simonwep/pickr": "^1.7.2",
     "stimulus": "^1.1.1",
     "tailwindcss": "^1.7.1",
     "webfontloader": "^1.6.28"

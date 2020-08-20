@@ -2,9 +2,13 @@
   <div class="w-full h-screen flex flex-col items-center justify-center">
     <div contenteditable="true"
       class="text-8xl"
-      style="font-family:Ma Shan Zheng;"
+      style="font-family:Ma Shan Zheng;color: #c05621;"
       data-target="font.text"
-    >MyLogo</div>
+      id="logo"
+    >梁博渊 Bran</div>
+    <button data-action="font#downloadPNG">Export PNG</button>
+    <div data-controller="color"></div>
+    <canvas id="test-canvas">
   </div>
   <div class="font-selector w-64 bg-gray-300">
     <div style="font-family:Droid Sans;" data-target="font.google" data-action="click->font#switch">Droid Sans</div>
