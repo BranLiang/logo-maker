@@ -4,7 +4,7 @@ import WebFont from "webfontloader"
 import SearchEngine from "../utils/search_engine"
 
 export default class extends Controller {
-  static targets = ["list", "loader"]
+  static targets = ["list", "loader", "filter"]
 
   connect() {
     this.addGoogleFonts(googleFonts)
@@ -12,14 +12,29 @@ export default class extends Controller {
   }
 
   search() {
+    let results
     const key = document.getElementById("search-keyword").value
-    const results = SearchEngine.search(key)
-    console.log(results)
+    if (key) {
+      results = this.filterFonts(SearchEngine.search(key))
+    } else {
+      results = this.filterFonts(googleFonts)
+    }
     this.clearFonts()
     if (results.length > 0) {
       this.showFonts(results)
     } else {
       this.showAll()
+    }
+  }
+
+  filterFonts(results) {
+    const filterKey = this.filterTarget.value
+    if (filterKey) {
+      return results.filter(r => {
+        return r.subsets.includes(filterKey) || r.subsets.includes(`${filterKey}-ext`)
+      })
+    } else {
+      return results
     }
   }
 
