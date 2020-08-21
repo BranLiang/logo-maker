@@ -1,8 +1,7 @@
 const defaultOptions = { height: 150 }
 
-export const htmlToPNG = (element, { height } = defaultOptions) => {
-  // const canvas = document.createElement('canvas')
-  const canvas = document.getElementById("test-canvas")
+export const htmlToCanvas = (element, { height } = defaultOptions) => {
+  const canvas = document.createElement('canvas')
   const ctx = canvas.getContext('2d')
 
   // Element attributes
@@ -32,4 +31,14 @@ export const htmlToPNG = (element, { height } = defaultOptions) => {
 
   // Fill texts
   ctx.fillText(element.textContent, parseInt(width/2), parseInt(height/2))
+  return canvas
 }
+
+export const canvasToPNG = (canvas) => {
+  const png = canvas.toDataURL('image/png')
+  var link = document.createElement('a');
+  link.download = 'logo.png';
+  link.href = png
+  link.click()
+}
+
