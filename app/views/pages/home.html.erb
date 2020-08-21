@@ -1,14 +1,26 @@
-<div class="flex justify-between" data-controller="logo">
-  <div class="w-full h-screen flex flex-col items-center justify-center">
-    <div>
+<div class="flex justify-between h-screen" data-controller="logo">
+  <div class="w-full flex flex-col items-center justify-center">
+    <div class="p-10">
       <div contenteditable="true"
         class="text-8xl font-default text-white bg-red-700 leading-none px-6 py-4"
         id="logo"
       >SUPER</div>
     </div>
-    <div class="mt-24">
-      <button data-action="logo#downloadPNG">Export PNG</button>
-      <div data-controller="color"></div>
+    <div class="mt-16">
+      <div class="py-2">
+        <div data-controller="color" data-color-target="text"></div>
+        <span class="ml-2 font-bold text-lg text-green-800">Text color</span>
+      </div>
+      <div class="py-2">
+        <div data-controller="color" data-color-target="background"></div>
+        <span class="ml-2 font-bold text-lg text-green-800">Background color</span>
+      </div>
+      <div class="py-2">
+        <button
+          class="bg-green-600 w-full hover:bg-green-800 text-white font-bold py-2 rounded-full"
+          data-action="logo#downloadPNG"
+        >Export PNG</button>
+      </div>
     </div>
   </div>
   <div class="w-64 border-l border-gray-400" data-controller="font">
@@ -19,7 +31,7 @@
         <i data-feather="check" class="inline w-4 h-4 text-green-800" data-controller="feather"></i>
       </button>
     </div>
-    <div class="px-4 py-2 border-t border-gray-400">
+    <div class="h-12 px-4 py-2 border-t border-gray-400">
       <select class="w-full" data-target="font.filter" data-action="font#search">
         <option value="">All Languages</option>
         <option value="latin">Latin</option>

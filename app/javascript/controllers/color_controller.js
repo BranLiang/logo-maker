@@ -43,10 +43,16 @@ export default class extends Controller {
       }
     });
 
+    const target = this.data.get("target")
+
     pickr.on('change', color => {
       const rgba = color.toRGBA().toString(3)
       const element = document.getElementById("logo")
-      element.style.color = rgba
+      if (target === "text") {
+        element.style.color = rgba
+      } else {
+        element.style.backgroundColor = rgba
+      }
     })
   }
 }
