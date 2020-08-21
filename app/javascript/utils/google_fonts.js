@@ -1593,6 +1593,7 @@ export default [{
   "subsets": ["cyrillic", "greek", "greek-ext", "latin", "latin-ext", "vietnamese"]
 }, {
   "family": "Liu Jian Mao Cao",
+  "display_name": "钟齐流江",
   "subsets": ["chinese-simplified", "latin"]
 }, {
   "family": "Livvic",
@@ -1617,6 +1618,7 @@ export default [{
   "subsets": ["latin"]
 }, {
   "family": "Long Cang",
+  "display_name": "龙藏体",
   "subsets": ["chinese-simplified", "latin"]
 }, {
   "family": "Lora",
@@ -1647,6 +1649,7 @@ export default [{
   "subsets": ["cyrillic", "cyrillic-ext", "greek", "greek-ext", "hebrew", "japanese", "latin", "latin-ext", "vietnamese"]
 }, {
   "family": "Ma Shan Zheng",
+  "display_name": "马善政楷书",
   "subsets": ["chinese-simplified", "latin"]
 }, {
   "family": "Macondo",
@@ -2976,18 +2979,22 @@ export default [{
   "subsets": ["latin", "latin-ext"]
 }, {
   "family": "ZCOOL KuaiLe",
+  "display_name": "站酷快乐体",
   "subsets": ["chinese-simplified", "latin"]
 }, {
   "family": "ZCOOL QingKe HuangYou",
+  "display_name": "庆科黄油体",
   "subsets": ["chinese-simplified", "latin"]
 }, {
   "family": "ZCOOL XiaoWei",
+  "display_name": "站酷小薇体",
   "subsets": ["chinese-simplified", "latin"]
 }, {
   "family": "Zeyada",
   "subsets": ["latin"]
 }, {
   "family": "Zhi Mang Xing",
+  "display_name": "钟齐志莽行书",
   "subsets": ["chinese-simplified", "latin"]
 }, {
   "family": "Zilla Slab",
