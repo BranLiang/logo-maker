@@ -1,27 +1,50 @@
 import { Controller } from "stimulus"
-import googleFonts from "../utils/google_fonts_sample"
+import googleFonts from "../utils/google_fonts"
 import WebFont from "webfontloader"
 import SearchEngine from "../utils/search_engine"
 
 export default class extends Controller {
-  static targets = ["list"]
+  static targets = ["list", "loader"]
 
   connect() {
     this.addGoogleFonts(googleFonts)
+    this.loadFonts(googleFonts)
   }
 
-  search(e) {
-    const key = e.target.value
+  search() {
+    const key = document.getElementById("search-keyword").value
     const results = SearchEngine.search(key)
+    console.log(results)
     this.clearFonts()
     if (results.length > 0) {
-      this.addGoogleFonts(results.slice(0,10))
+      this.showFonts(results)
+    } else {
+      this.showAll()
     }
   }
 
   clearFonts() {
-    while (this.listTarget.lastElementChild) {
-      this.listTarget.removeChild(this.listTarget.lastElementChild);
+    for (var i = 0; i < this.listTarget.children.length; i++) {
+      const child = this.listTarget.children[i]
+      child.classList.add('hidden');
+    }
+  }
+
+  showFonts(fonts) {
+    const families = fonts.map(f => f.family)
+    for (var i = 0; i < this.listTarget.children.length; i++) {
+      const child = this.listTarget.children[i]
+      const family = child.style.fontFamily.replace(/['"]+/g, '')
+      if (families.indexOf(family) >= 0) {
+        child.classList.remove('hidden')
+      }
+    }
+  }
+
+  showAll() {
+    for (var i = 0; i < this.listTarget.children.length; i++) {
+      const child = this.listTarget.children[i]
+      child.classList.remove('hidden');
     }
   }
 
@@ -39,6 +62,9 @@ export default class extends Controller {
       })
       this.listTarget.append(element)
     })
+  }
+  
+  loadFonts(fonts) {
     WebFont.load({
       google: {
         families: fonts.map(f => f.family)

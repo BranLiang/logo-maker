@@ -9,10 +9,13 @@
     <canvas id="test-canvas">
   </div>
   <div class="w-64 border-l border-gray-400" data-controller="font">
-    <div class="px-4 py-2 flex items-center">
+    <div class="px-4 py-2 flex items-center h-12 bg-white w-full">
       <i data-feather="search" class="inline w-4 h-4 text-green-800" data-controller="feather"></i>
-      <input type="text" placeholder="Search" data-action="input->font#search" class="ml-2">
+      <input type="text" placeholder="Search" id="search-keyword" class="ml-2">
+      <button data-action="font#search">
+        <i data-feather="check" class="inline w-4 h-4 text-green-800" data-controller="feather"></i>
+      </button>
     </div>
-    <div class="font-selector" data-target="font.list"></div>
+    <div class="font-selector w-64" data-target="font.list"></div>
   </div>
 </div>
