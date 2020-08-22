@@ -1,8 +1,8 @@
-<div class="flex justify-between h-screen" data-controller="logo">
-  <div class="w-full flex flex-col items-center justify-center">
+<div class="flex justify-between" data-controller="logo">
+  <div class="w-full h-screen flex flex-col items-center justify-center">
     <div class="p-10">
       <div contenteditable="true"
-        class="text-8xl font-default text-white bg-red-700 leading-none px-6 py-4"
+        class="text-8xl font-default text-white bg-red-700 leading-none px-6 py-4 h-32 flex items-center justify-center"
         id="logo"
       >SUPER</div>
     </div>
@@ -19,6 +19,10 @@
         <input data-action="input->logo#round" type="range" min="0" max="50" value="0">
         <span class="ml-2 font-bold text-lg text-green-800">Round corner</span>
       </div>
+      <div class="mt-4 mb-2 py-2 flex items-center border-gray-400 border-dashed px-2 border rounded-lg w-full">
+        <input class="border-b" id="logo-height" type="number" min="0" max="500">
+        <span class="ml-2 font-bold text-lg text-green-800">px (Export height)</span>
+      </div>
       <div class="py-2">
         <button
           class="bg-green-600 w-full hover:bg-green-800 text-white font-bold py-2 rounded-full"
@@ -27,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div class="w-64 border-l border-gray-400" data-controller="font">
+  <div class="w-64 border-l box-content border-gray-400 h-screen" data-controller="font">
     <div class="px-4 py-2 flex items-center h-12 bg-white w-full">
       <i data-feather="search" class="inline w-4 h-4 text-green-800" data-controller="feather"></i>
       <input type="text" placeholder="Search" id="search-keyword" class="ml-2">

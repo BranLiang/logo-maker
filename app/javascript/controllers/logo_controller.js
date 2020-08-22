@@ -11,8 +11,9 @@ export default class extends Controller {
 
   downloadPNG() {
     const element = document.getElementById("logo")
+    const heightInput = document.getElementById("logo-height")
     const canvas = htmlToCanvas(element, {
-      height: element.offsetHeight
+      height: heightInput.value || element.offsetHeight
     })
     canvasToPNG(canvas)
   }

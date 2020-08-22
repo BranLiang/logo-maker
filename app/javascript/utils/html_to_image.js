@@ -11,6 +11,7 @@ export const htmlToCanvas = (element, { height } = defaultOptions) => {
   const fontFamily = attributes.fontFamily.replace(/['"]+/g, '')
 
   // Setup canvas
+  const canvasRatio = height / element.offsetHeight
   const ratio = element.offsetWidth / element.offsetHeight
   const width = parseInt(height * ratio)
   canvas.height = height
@@ -19,14 +20,17 @@ export const htmlToCanvas = (element, { height } = defaultOptions) => {
   // Fill background
   if (backgroundColor) {
     ctx.fillStyle = backgroundColor
-    const radius = parseInt(attributes.borderRadius)
+    const radius = parseInt(attributes.borderRadius) * canvasRatio
+    console.log(radius)
+    console.log(attributes.borderRadius)
+    console.log(canvasRatio)
     ctx.arc(radius, radius, radius, Math.PI, Math.PI * 1.5, false)
-    ctx.lineTo(element.offsetWidth - 2*radius, 0)
-    ctx.arc(element.offsetWidth - radius, radius, radius, Math.PI * 1.5, 0, false)
-    ctx.lineTo(element.offsetWidth, element.offsetHeight - 2*radius)
-    ctx.arc(element.offsetWidth - radius, element.offsetHeight - radius, radius, 0, Math.PI * 0.5, false)
-    ctx.lineTo(radius, element.offsetHeight)
-    ctx.arc(radius, element.offsetHeight - radius, radius, Math.PI * 0.5, Math.PI, false)
+    ctx.lineTo(width - 2*radius, 0)
+    ctx.arc(width - radius, radius, radius, Math.PI * 1.5, 0, false)
+    ctx.lineTo(width, height - 2*radius)
+    ctx.arc(width - radius, height - radius, radius, 0, Math.PI * 0.5, false)
+    ctx.lineTo(radius, height)
+    ctx.arc(radius, height - radius, radius, Math.PI * 0.5, Math.PI, false)
     ctx.lineTo(0, radius)
     ctx.fill()
   }
