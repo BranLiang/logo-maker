@@ -3,9 +3,18 @@ import Pickr from '@simonwep/pickr'
 
 export default class extends Controller {
   connect() {
+    const target = this.data.get("target")
+    const logo = document.getElementById("logo")
+    let defaultColor = ''
+    if (target === 'text') {
+      defaultColor = getComputedStyle(logo).color
+    } else {
+      defaultColor = getComputedStyle(logo).backgroundColor
+    }
     const pickr = Pickr.create({
       el: this.element,
       theme: 'classic', // or 'monolith', or 'nano'
+      default: defaultColor,
 
       swatches: [
         'rgba(244, 67, 54, 1)',
@@ -43,15 +52,15 @@ export default class extends Controller {
       }
     });
 
-    const target = this.data.get("target")
-
-    pickr.on('change', color => {
-      const rgba = color.toRGBA().toString(3)
-      const element = document.getElementById("logo")
+    pickr.on('save', color => {
+      let rgba = 'rgba(0,0,0,0)'
+      if (color) {
+        rgba = color.toRGBA().toString(3)
+      }
       if (target === "text") {
-        element.style.color = rgba
+        logo.style.color = rgba
       } else {
-        element.style.backgroundColor = rgba
+        logo.style.backgroundColor = rgba
       }
     })
   }

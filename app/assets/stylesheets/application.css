@@ -36,3 +36,7 @@
 .pickr {
   display: inline;
 }
+
+.pickr > button {
+  border: 1px dashed black;
+}
