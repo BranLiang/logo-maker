@@ -16,4 +16,9 @@ export default class extends Controller {
     })
     canvasToPNG(canvas)
   }
+
+  round(e) {
+    const element = document.getElementById("logo")
+    element.style.borderRadius = `${e.target.value}px`
+  }
 }
