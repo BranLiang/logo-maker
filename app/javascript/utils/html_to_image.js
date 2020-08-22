@@ -19,7 +19,16 @@ export const htmlToCanvas = (element, { height } = defaultOptions) => {
   // Fill background
   if (backgroundColor) {
     ctx.fillStyle = backgroundColor
-    ctx.fillRect(0, 0, width, height)
+    const radius = parseInt(attributes.borderRadius)
+    ctx.arc(radius, radius, radius, Math.PI, Math.PI * 1.5, false)
+    ctx.lineTo(element.offsetWidth - 2*radius, 0)
+    ctx.arc(element.offsetWidth - radius, radius, radius, Math.PI * 1.5, 0, false)
+    ctx.lineTo(element.offsetWidth, element.offsetHeight - 2*radius)
+    ctx.arc(element.offsetWidth - radius, element.offsetHeight - radius, radius, 0, Math.PI * 0.5, false)
+    ctx.lineTo(radius, element.offsetHeight)
+    ctx.arc(radius, element.offsetHeight - radius, radius, Math.PI * 0.5, Math.PI, false)
+    ctx.lineTo(0, radius)
+    ctx.fill()
   }
 
   // Text styles
@@ -41,4 +50,3 @@ export const canvasToPNG = (canvas) => {
   link.href = png
   link.click()
 }
-
