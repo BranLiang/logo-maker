@@ -6,6 +6,7 @@
     "@rails/webpacker": "4.2.2",
     "@simonwep/pickr": "^1.7.2",
     "@svgdotjs/svg.js": "^3.0.16",
+    "dom-to-image": "^2.6.0",
     "feather-icons": "^4.28.0",
     "js-search": "^2.0.0",
     "stimulus": "^1.1.1",

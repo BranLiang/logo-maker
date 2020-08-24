@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-import { htmlToCanvas, canvasToPNG } from "../utils/html_to_image"
+import domtoimage from 'dom-to-image';
 
 export default class extends Controller {
   connect() {
@@ -11,11 +11,13 @@ export default class extends Controller {
 
   downloadPNG() {
     const element = document.getElementById("logo")
-    const heightInput = document.getElementById("logo-height")
-    const canvas = htmlToCanvas(element, {
-      height: heightInput.value || element.offsetHeight
-    })
-    canvasToPNG(canvas)
+    domtoimage.toPng(element)
+      .then((dataUrl) => {
+        var link = document.createElement('a');
+        link.download = 'logo.png';
+        link.href = dataUrl
+        link.click()
+      })
   }
 
   round(e) {

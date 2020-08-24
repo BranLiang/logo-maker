@@ -9,6 +9,7 @@ export const htmlToCanvas = (element, { height } = defaultOptions) => {
   const backgroundColor = attributes.backgroundColor
   const color = attributes.color
   const fontFamily = attributes.fontFamily.replace(/['"]+/g, '')
+  const fontSize = parseInt(attributes.fontSize)
 
   // Setup canvas
   const canvasRatio = height / element.offsetHeight
@@ -35,9 +36,11 @@ export const htmlToCanvas = (element, { height } = defaultOptions) => {
     ctx.fill()
   }
 
+  ctx.strokeStyle = "black";
+  ctx.fillStroke
+
   // Text styles
-  const fontSizeRatio = parseInt(attributes.lineHeight) / parseInt(attributes.height)
-  ctx.font = `${parseInt(height * fontSizeRatio)}px ${fontFamily}`
+  ctx.font = `${parseInt(fontSize * canvasRatio)}px ${fontFamily}`
   ctx.textAlign = "center"
   ctx.textBaseline = 'middle'
   ctx.fillStyle = color
