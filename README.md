@@ -11,7 +11,7 @@ Yet another simple logo maker.
 - [x] font styles preview
 - [x] Background and rounded corner
 - [x] Language filter 
-- [x] svg export
+- [ ] svg export
 
 ## Getting started
 
