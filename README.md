@@ -1,24 +1,23 @@
-# README
+# Supreme style logo maker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center"> 
+<img src="https://github.com/BranLiang/logo-maker/blob/master/preview.png">
+</p>
 
-Things you may want to cover:
+Yet another simple logo maker.
 
-* Ruby version
+## Features
 
-* System dependencies
+- [x] font styles preview
+- [x] Background and rounded corner
+- [x] Language filter 
+- [x] svg export
 
-* Configuration
+## Getting started
 
-* Database creation
+```bash
+$ git clone https://github.com/BranLiang/logo-maker
+$ bundle install
+$ bundle exec rails server
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
