@@ -1,10 +1,11 @@
 <div class="flex justify-between" data-controller="logo">
   <div class="w-full h-screen flex flex-col items-center justify-center">
-    <div class="p-10">
+    <div class="p-10 flex">
+      <input id="position-slider" data-action="change->logo#verticalMove" type="range" min="-10" max="10" value="0">
       <div contenteditable="true"
         class="text-8xl font-default text-white bg-red-700 leading-none px-6 py-4 h-32 flex items-center justify-center"
         id="logo"
-      >SUPER</div>
+      ><span>SUPER</span></div>
     </div>
     <div class="mt-10">
       <div class="py-2">

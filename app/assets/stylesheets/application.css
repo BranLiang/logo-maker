@@ -40,3 +40,9 @@
 .pickr > button {
   border: 1px dashed black;
 }
+
+#position-slider {
+  width: 2rem;
+  height: 8rem;
+  -webkit-appearance: slider-vertical;
+}
