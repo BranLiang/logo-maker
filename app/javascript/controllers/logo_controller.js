@@ -9,12 +9,12 @@ export default class extends Controller {
     })
   }
 
-  downloadPNG() {
+  downloadSVG() {
     const element = document.getElementById("logo")
-    domtoimage.toPng(element)
+    domtoimage.toSvg(element)
       .then((dataUrl) => {
         var link = document.createElement('a');
-        link.download = 'logo.png';
+        link.download = 'logo.svg';
         link.href = dataUrl
         link.click()
       })
