@@ -20,11 +20,15 @@
         <input data-action="input->logo#round" type="range" min="0" max="50" value="0">
         <span class="ml-2 font-bold text-lg text-green-800">Round corner</span>
       </div>
+      <div class="mt-4 mb-2 py-2 flex items-center border-gray-400 border-dashed px-2 border rounded-lg w-full">
+        <input class="border-b" id="logo-height" type="number" min="0" max="500">
+        <span class="ml-2 font-bold text-lg text-green-800">px (Export height)</span>
+      </div>
       <div class="py-2">
         <button
           class="bg-blue-600 w-full hover:bg-blue-800 text-white font-bold py-2 rounded-full"
-          data-action="logo#downloadSVG"
-        >Export SVG</button>
+          data-action="logo#downloadPNG"
+        >Export PNG</button>
       </div>
     </div>
   </div>
